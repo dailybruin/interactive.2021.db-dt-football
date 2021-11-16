@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 import './App.css';
+import Landing from './components/Landing';
 
 function App() {
   const [ data, setData ] = useState(null);
@@ -13,7 +14,8 @@ function App() {
 
   return (
     <div className="App">
-      Hello Daily Bruin!
+      <Landing/>
+
     </div>
   );
 }
