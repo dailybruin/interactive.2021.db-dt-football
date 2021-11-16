@@ -11,10 +11,6 @@ const Wrapper = styled.div`
     font-family: "Press Start 2P", cursive;
     color: white;
     padding: 1% 5% 1% 5%;
-
-    /* TO BE REMOVED */
-    border: 2px solid black;
-    background-color: black;
 `;
 
 const Link = styled.a`
