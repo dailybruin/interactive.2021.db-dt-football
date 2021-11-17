@@ -3,19 +3,23 @@ import styled from 'styled-components';
 
 const Box = styled.div`
 /* height: 100%; */
-width: 80%;
+width: 95%;
 justify-self: center;
 padding: 10px;
 grid-area: ${(props) => props.direction};
+display: flex;
+flex-direction: row-reverse;
 `;
 
 const Image = styled.div`
   height: 400px;
+  width: 400px;
   object-fit: cover;
   background-image: url(${"https://saturdayblitz.com/wp-content/uploads/imagn-images/2017/07/15337202.jpeg"});
   background-position: center;
   background-size: cover;
-  border-left: 10px solid #C31F1F;
+  border-left: 10px solid;
+  border-left-color: ${(props) => props.color};
 `;
 
 const Text = styled.div`
@@ -44,14 +48,14 @@ text-align: left;
 padding-left: 30px;
 padding-right: 121px;
 padding-bottom: 60px;
-
 `;
 
 export default function PlayerCards(props) {
     let dir = props.direction;
+    let color = props.color;
     return (
         <Box direction = {dir}> 
-            <Image src="" alt=""/>
+            <Image src="" alt="" color = {color}/>
               <Text>
                 <Body> 
                 This thing happened to these football players today 
