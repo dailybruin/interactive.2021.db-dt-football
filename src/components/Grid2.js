@@ -4,8 +4,8 @@ import Grid2ArticleBox from '../components/Grid2ArticleBox'
 
 const Grid = styled.div`
 display: grid;
-grid-template-columns: auto auto;
-grid-template-rows: 200px 200px 200px 200px 200px;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: auto;
 `;
 
 export default function Grid2() {
