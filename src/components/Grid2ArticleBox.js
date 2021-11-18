@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from 'styled-components';
 
 const Box = styled.div`
 display: flex;
 flex-direction: row;
-height: 95%;
-width: 85%;
 justify-content: center;
 align-items: center;
+min-height: 200px;
 `;
 
 const Text = styled.div`
@@ -34,17 +33,18 @@ const Image = styled.div`
   border-left-width: 7px;
   border-left-style: solid;
   border-left-color: ${(props) => props.color};
-  /* position: relative; */
 `;
 
 export default function ArticleBox(props) {
-    let color = props.color;
+    let text = props.text;
+    let author = props.author;
     let image = props.image;
+    let color = props.color;
     return (
         <Box> 
             <Text>
-                <News> This thing happened to these football players today this thing happened to these football players today </News>
-                <Author> Author Name </Author>
+                <News> {text} </News>
+                <Author> {author} </Author>
             </Text>
             <Image color={color} image = {image} src="" alt=""/>
         </Box>
