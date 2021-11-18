@@ -12,8 +12,8 @@ flex-direction: row-reverse;
 `;
 
 const Image = styled.div`
-  height: 400px;
-  width: 400px;
+  height: 291px;
+  width: 328px;
   object-fit: cover;
   background-image: url(${"https://saturdayblitz.com/wp-content/uploads/imagn-images/2017/07/15337202.jpeg"});
   background-position: center;
@@ -23,31 +23,32 @@ const Image = styled.div`
 `;
 
 const Text = styled.div`
-background-color: grey;
 color: black;
+text-align: left;
 /* padding-top: 20px; */
 padding-bottom: 10px;
 `;
 
 const Body = styled.div`
-background-color: grey;
+background-color: white;
 color: black;
-font-family: 'Franklin Gothic Medium';
 padding-left: 30px;
 padding-right: 30px;
 padding-top: 61px;
-padding-bottom: 42px;
-font-family: "Gotham Condensed";
+padding-bottom: 30px;
+font-family: "Open Sans Condensed";
+font-weight: normal;
+font-size: 24px;
 `;
 
 const AuthorName = styled.div`
-background-color: grey;
 color: black;
-font-size: 30px;
-text-align: left;
 padding-left: 30px;
 padding-right: 121px;
 padding-bottom: 60px;
+font-family: 'Press Start 2P', cursive;
+font-weight: normal;
+font-size: 12px;
 `;
 
 export default function PlayerCards(props) {
@@ -56,13 +57,12 @@ export default function PlayerCards(props) {
     return (
         <Box direction = {dir}> 
             <Image src="" alt="" color = {color}/>
-              <Text>
-                <Body> 
-                This thing happened to these football players today 
-                this thing happened to these football players today
-                 </Body>
-                <AuthorName> Author Name </AuthorName>
-              </Text>
+            <Text>
+              <Body> 
+              This thing happened to these football players today this thing happened to these football players today
+                </Body>
+              <AuthorName> Author Name </AuthorName>
+            </Text>
           </Box>
       );
 }
