@@ -5,15 +5,16 @@ import Grid2ArticleBox from '../components/Grid2ArticleBox'
 const Grid = styled.div`
 display: grid;
 grid-template-columns: repeat(2, 1fr);
-grid-gap: 5px;
+grid-gap: 20px;
+
 `;
 
 const TitleGrid = styled.div`
   display: grid; 
   grid-template-columns: repeat(2,1fr);
-  border: 1px solid black;
-  padding-bottom: 10px;
-  grid-gap: 5px;
+  /* border: 1px solid black; */
+  padding-bottom: 15px;
+  grid-gap: 20px;
 `;
 
 const Title = styled.div`
@@ -27,6 +28,7 @@ const DB_TextBox = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    /* box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); */
 
     //how to make a semi-transparent background
     background-image: linear-gradient(to bottom, #ffffff00 50%, #0C6498 50%); 
@@ -38,6 +40,8 @@ const DT_TextBox = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    /* box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); */
+
     background-image: linear-gradient(to bottom, #ffffff00 50%, #C31F1F 50%);
 `
 
