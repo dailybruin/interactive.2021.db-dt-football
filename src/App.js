@@ -3,6 +3,7 @@ import './App.css';
 import styled from 'styled-components';
 import Grid2 from "./components/Grid2";
 import bg from "./images/bg.svg";
+import Landing from './components/Landing';
 
 const Background = styled.div`
     background-color: #242424;
@@ -10,7 +11,6 @@ const Background = styled.div`
     background-size: cover;
     background-position: top;
     padding: 200px 50px 200px 50px;
-    //need to be deleted
 
 `
 function App() {
@@ -23,6 +23,7 @@ function App() {
   }, [])
 
   return (
+    
     <Background>
         <Grid2/>
     </Background>
