@@ -87,7 +87,7 @@ const BigImage = styled.div`
   height: 99%;
   width: 90%;
   object-fit: cover;
-  background-image: url(${"https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e.jpg"});
+  background-image: url(${(props) => props.src});
   background-position: center;
   background-size: cover;
   grid-area: ${(props) => props.direction};
@@ -113,25 +113,58 @@ font-family: 'Courier New', Courier, monospace;
 grid-area: ${(props) => props.direction};
 `;
 
-export default function Grid1() {
+
+
+
+export default function Grid1(props) {
     const [ DBText_, setDBText ] = useState(false);
     const [ DTText_, setDTText ] = useState(false);
-    const [ ImagePicked, setImagePicked ] = useState(0);
+    const [ UCLAimagePicked, setUCLAimagePicked ] = useState(0);
+    const [ USCimagePicked, setUSCimagePicked ] = useState(0);
+
+    let UCLAsideSources = [];
+    let UCLAmainSources = [];
+    let UCLAplayerText = [];
+
+    let USCsideSources = [];
+    let USCmainSources = [];
+    let USCplayerText = [];
+
+    props.imageDetails.forEach((ele) => {
+      if (ele.id === "UCLA") {
+        UCLAsideSources.push(ele.src);
+        UCLAmainSources.push(ele.mainSrc);
+        UCLAplayerText.push(ele.playerText);
+      }
+      else {
+        USCsideSources.push(ele.src);
+        USCmainSources.push(ele.mainSrc);
+        USCplayerText.push(ele.playerText);
+      }
+
+    })
+    let UCLASmallImages = []
+    let USCSmallImages = []
+
+    for (var i = 0; i < UCLAsideSources.length; i++) {
+      let image_number = i+1;
+      UCLASmallImages.push(<SmallImage direction={"blue" + image_number} src={UCLAsideSources[i]} onClick={()=>{setUCLAimagePicked(i)}}/>);
+    }
+
+    for (var i = 0; i < USCsideSources.length; i++) {
+      let image_number = i+1;
+      UCLASmallImages.push(<SmallImage direction={"red" + image_number} src={USCsideSources[i]} onClick={()=>{setUSCimagePicked(i)}}/>);
+    }
 
     let source = "https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e.jpg";
-    let arr = [<SmallImage direction="blue1" src = {source}/>,
-              <SmallImage direction="blue2" src = {source}/>,
-              <SmallImage direction="blue3" src = {source}/>,
-              <SmallImage direction="blue4" src = {source}/>,
-              <SmallImage direction="blue5" src = {source}/>];
 
     if (!DTText_ && !DBText_) {
           return (
               <NormalGrid>
-              {arr.map((ele, index) => {return ele})}
+              {UCLASmallImages.map((ele, index) => {return ele})}
 
-              <BigImage direction="bigBlue"/>
-              <BigImage direction="bigRed"/>
+              <BigImage direction="bigBlue" src={UCLAmainSources[UCLAimagePicked]}/>
+              <BigImage direction="bigRed" src = {USCmainSources[USCimagePicked]}/>
 
             <DBText direction="db-text">
               LET US SEEEEEE lorem sed risus ultricies tristique nulla aliquet enim tortor at auctor urna nunc id cursus metus aliquam eleifend
@@ -145,13 +178,7 @@ export default function Grid1() {
               <div onClick={()=>{setDTText(true)}}> READ MORE</div>
               </DTText>
 
-
-
-              <SmallImage direction="red1"/>
-              <SmallImage direction="red2"/>
-              <SmallImage direction="red3"/>
-              <SmallImage direction="red4"/>
-              <SmallImage direction="red5"/>
+              {USCSmallImages.map((ele, index) => {return ele})}
               </NormalGrid>
           );
     }
@@ -159,7 +186,7 @@ export default function Grid1() {
     if (DBText_ && !DTText_) {
       return (
               <LeftTextGrid>
-              <BigImage direction="bigRed"/> 
+              <BigImage direction="bigRed" src = {USCmainSources[USCimagePicked]}/>
 
             <DBText direction = "left">
               LET US SEEEEEE lorem sed risus ultricies tristique nulla aliquet enim tortor at auctor urna nunc id cursus metus aliquam eleifend
@@ -175,11 +202,7 @@ export default function Grid1() {
 
 
 
-              <SmallImage direction="red1"/>
-              <SmallImage direction="red2"/>
-              <SmallImage direction="red3"/>
-              <SmallImage direction="red4"/>
-              <SmallImage direction="red5"/>
+              {USCSmallImages.map((ele, index) => {return ele})}
               </LeftTextGrid>
           );
 
@@ -190,16 +213,12 @@ export default function Grid1() {
 
       return (
               <RightTextGrid>
-              <SmallImage direction="blue1"/>
-              <SmallImage direction="blue2"/>
-              <SmallImage direction="blue3"/>
-              <SmallImage direction="blue4"/>
-              <SmallImage direction="blue5"/>
+              {UCLASmallImages.map((ele, index) => {return ele})}
 
-              <BigImage direction="bigBlue"/>
+              <BigImage direction="bigBlue" src={UCLAmainSources[UCLAimagePicked]}/>
               
 
-            <DBText direction="db-text">
+            <DBText direction="db-text" >
               LET US SEEEEEE lorem sed risus ultricies tristique nulla aliquet enim tortor at auctor urna nunc id cursus metus aliquam eleifend
               mi in nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper eget duis at tellus at urna condimentum 
               <div onClick={()=>{setDBText(true)}}> READ MORE</div>
@@ -219,7 +238,6 @@ export default function Grid1() {
       return (
               <BothSidesTextGrid>
               
-
             <DBText direction="left">
               LET US SEEEEEE lorem sed risus ultricies tristique nulla aliquet enim tortor at auctor urna nunc id cursus metus aliquam eleifend
               mi in nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper eget duis at tellus at urna condimentum 
