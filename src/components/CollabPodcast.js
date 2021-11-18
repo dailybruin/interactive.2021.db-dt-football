@@ -1,6 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
-import './Collab.css';
+// import './Collab.css';
 import CollabHeader from "./CollabHeader";
 import ShareIcon from '../share.png';
 import PodcastBackground from '../podcast_background.png';
@@ -66,7 +66,7 @@ function CollabPodcast(props) {
         intro_text: ''
       }}/>
       {
-        props.data.map((card, index) =>
+        props.data && props.data.map((card, index) =>
           <PodcastCard key={index}>
             <PodcastImg src={card['image_link']}/>
             <PodcastInfo>

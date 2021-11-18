@@ -1,6 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
-import './Collab.css';
+// import './Collab.css';
 
 function CollabHeader(props) {
   const MainWrapper = styled.div`
