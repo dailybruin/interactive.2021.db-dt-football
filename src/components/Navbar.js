@@ -2,8 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-    /* Location Properties */
-
     display: flex;
     flex-direction: row;
     width: 75%;
@@ -14,12 +12,8 @@ const Wrapper = styled.div`
 `;
 
 const Link = styled.a`
-    text-decoration: none;
     color: white;
-    transition: all 200ms ease-in-out;
-    &:hover {
-        text-decoration: underline;
-    }
+    text-decoration: none;
 `;
 
 const Navbar = () => {
