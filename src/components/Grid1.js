@@ -75,7 +75,7 @@ const SmallImage = styled.div`
   height: 90%;
   width: 90%;
   object-fit: cover;
-  background-image: url(${"https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e.jpg"});
+  background-image: url(${(props) => props.src});
   background-position: center;
   background-size: cover;
   grid-area: ${(props) => props.direction};
@@ -113,18 +113,22 @@ font-family: 'Courier New', Courier, monospace;
 grid-area: ${(props) => props.direction};
 `;
 
-export default function Grid1(){
+export default function Grid1() {
     const [ DBText_, setDBText ] = useState(false);
     const [ DTText_, setDTText ] = useState(false);
+    const [ ImagePicked, setImagePicked ] = useState(0);
+
+    let source = "https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e.jpg";
+    let arr = [<SmallImage direction="blue1" src = {source}/>,
+              <SmallImage direction="blue2" src = {source}/>,
+              <SmallImage direction="blue3" src = {source}/>,
+              <SmallImage direction="blue4" src = {source}/>,
+              <SmallImage direction="blue5" src = {source}/>];
 
     if (!DTText_ && !DBText_) {
           return (
               <NormalGrid>
-              <SmallImage direction="blue1"/>
-              <SmallImage direction="blue2"/>
-              <SmallImage direction="blue3"/>
-              <SmallImage direction="blue4"/>
-              <SmallImage direction="blue5"/>
+              {arr.map((ele, index) => {return ele})}
 
               <BigImage direction="bigBlue"/>
               <BigImage direction="bigRed"/>
