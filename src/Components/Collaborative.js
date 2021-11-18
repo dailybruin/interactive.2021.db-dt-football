@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import RivalryImage from '../testImage.png'
 
 const Description = styled.div`
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 18px;
     background-color: white;
     text-align: center;
     padding: 3% 10%;
@@ -21,7 +23,7 @@ const Container = styled.div`
 const TextBox = styled.div`
     position: absolute;
     background-color: white;
-    margin-top: 25%;
+    bottom: 0;
     width: 100%;
     height: 30%;
     border: 2px solid black;
@@ -29,6 +31,8 @@ const TextBox = styled.div`
 `;
 
 const Title = styled.div`
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 24px;
     width: 50%;
     padding: 2% 2%;
 `;

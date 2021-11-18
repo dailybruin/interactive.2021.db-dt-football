@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 import './App.css';
+import Collaborative from "./Components/Collaborative";
 
 function App() {
   const [ data, setData ] = useState(null);
@@ -13,7 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      Hello Daily Bruin!
+      <Collaborative/>
     </div>
   );
 }
