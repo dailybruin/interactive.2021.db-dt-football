@@ -24,17 +24,17 @@ const Image = styled.div`
 
 const Text = styled.div`
 color: black;
+height: 128px;
+width: 223px;
 text-align: left;
-/* padding-top: 20px; */
-padding-bottom: 10px;
+padding-top: 61px;
+padding-left: 30px;
+padding-right: 30px;
 `;
 
 const Body = styled.div`
 background-color: white;
 color: black;
-padding-left: 30px;
-padding-right: 30px;
-padding-top: 61px;
 padding-bottom: 30px;
 font-family: "Open Sans Condensed";
 font-weight: normal;
@@ -43,8 +43,6 @@ font-size: 24px;
 
 const AuthorName = styled.div`
 color: black;
-padding-left: 30px;
-padding-right: 121px;
 padding-bottom: 60px;
 font-family: 'Press Start 2P', cursive;
 font-weight: normal;
