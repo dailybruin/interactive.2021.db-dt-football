@@ -23,9 +23,9 @@ const Image = styled.div`
 `;
 
 const Text = styled.div`
-color: black;
-height: 128px;
-width: 223px;
+background-color: white;
+height: 291px;
+width: 283px;
 text-align: left;
 padding-top: 61px;
 padding-left: 30px;
@@ -33,7 +33,6 @@ padding-right: 30px;
 `;
 
 const Body = styled.div`
-background-color: white;
 color: black;
 padding-bottom: 30px;
 font-family: "Open Sans Condensed";
