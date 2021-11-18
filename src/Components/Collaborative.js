@@ -21,10 +21,10 @@ const Container = styled.div`
 const TextBox = styled.div`
     position: absolute;
     background-color: white;
-    margin-top: 25%;
+    bottom: 0;
     width: 100%;
     height: 30%;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     text-align: left;
 `;
 

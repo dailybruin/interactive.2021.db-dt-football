@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
+import Collaborative from "./Components/Collaborative";
 import './App.css';
+
+const Container = styled.div`
+    padding: 50px;
+`;
 
 function App() {
   const [ data, setData ] = useState(null);
@@ -13,7 +18,10 @@ function App() {
 
   return (
     <div className="App">
-      Hello Daily Bruin!
+      <Container>
+        <Collaborative/>
+      </Container>
+      
     </div>
   );
 }
