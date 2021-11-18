@@ -4,8 +4,7 @@ import styled from 'styled-components';
 const Box = styled.div`
 display: flex;
 flex-direction: row;
-height: 95%;
-width: 85%;
+min-height: 200px;
 justify-content: center;
 align-items: center;
 `;
