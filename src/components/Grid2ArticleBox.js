@@ -28,10 +28,10 @@ const Image = styled.div`
   flex: 1 330px;
   height: 100%;
   object-fit: cover;
-  background-image: url(${"https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e.jpg"});
+  background-image: url(${"https://ca-times.brightspotcdn.com/dims4/default/816b63e/2147483647/strip/true/crop/2048x1389+0+0/resize/1486x1008!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fd9%2F52%2Ff91bd6b43d1df750bb910d6f7919%2Fla-sp-usc-vs-ucla-20181117-pictures-001"});
   background-position: center;
   background-size: cover;
-  broder-left-width: 1px;
+  border-left-width: 7px;
   border-left-style: solid;
   border-left-color: ${(props) => props.color};
   /* position: relative; */
