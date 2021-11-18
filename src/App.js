@@ -1,8 +1,18 @@
 import React, { useState, useEffect } from "react";
-import styled from 'styled-components';
 import './App.css';
+import styled from 'styled-components';
+import Grid2 from "./components/Grid2";
+import bg from "./images/bg.svg";
 import Landing from './components/Landing';
 
+const Background = styled.div`
+    background-color: #242424;
+    background-image: url(${bg});
+    background-size: cover;
+    background-position: top;
+    padding: 200px 50px 200px 50px;
+
+`
 function App() {
   const [ data, setData ] = useState(null);
   
@@ -13,10 +23,11 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      <Landing/>
-
-    </div>
+    
+    <Background>
+        <Grid2/>
+    </Background>
+    
   );
 }
 
