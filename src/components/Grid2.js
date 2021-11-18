@@ -11,16 +11,16 @@ grid-template-rows: 200px 200px 200px 200px 200px;
 export default function Grid2() {
     return (
         <Grid>
-            <Grid2ArticleBox color = "blue"></Grid2ArticleBox>
-            <Grid2ArticleBox color = "red"></Grid2ArticleBox>
-            <Grid2ArticleBox color = "blue"></Grid2ArticleBox>
-            <Grid2ArticleBox color = "red"></Grid2ArticleBox>
-            <Grid2ArticleBox color = "blue"></Grid2ArticleBox>
-            <Grid2ArticleBox color = "red"></Grid2ArticleBox>
-            <Grid2ArticleBox color = "blue"></Grid2ArticleBox>
-            <Grid2ArticleBox color = "red"></Grid2ArticleBox>
-            <Grid2ArticleBox color = "blue"></Grid2ArticleBox>
-            <Grid2ArticleBox color = "red"></Grid2ArticleBox>
+            <Grid2ArticleBox color = "#0C6498"></Grid2ArticleBox>
+            <Grid2ArticleBox color = "#C31F1F"></Grid2ArticleBox>
+            <Grid2ArticleBox color = "#0C6498"></Grid2ArticleBox>
+            <Grid2ArticleBox color = "#C31F1F"></Grid2ArticleBox>
+            <Grid2ArticleBox color = "#0C6498"></Grid2ArticleBox>
+            <Grid2ArticleBox color = "#C31F1F"></Grid2ArticleBox>
+            <Grid2ArticleBox color = "#0C6498"></Grid2ArticleBox>
+            <Grid2ArticleBox color = "#C31F1F"></Grid2ArticleBox>
+            <Grid2ArticleBox color = "#0C6498"></Grid2ArticleBox>
+            <Grid2ArticleBox color = "#C31F1F"></Grid2ArticleBox>
         </Grid>
     );
 }
