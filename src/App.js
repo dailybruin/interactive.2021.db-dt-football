@@ -42,7 +42,7 @@ function App() {
   return (
     (data &&
     <>
-      <Landing creds={"creds here"}/>
+      <Landing data={data}/>
       <Background>
         <CollabStory data={data['collab'][0]} />
         {isMobile && <MobileGrid2 isDB title={"Daily Bruin"} data={data.content}/>}
