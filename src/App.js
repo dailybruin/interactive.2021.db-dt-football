@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './App.css';
+import Collaborative from "./Components/Collaborative";
 import styled from 'styled-components';
 import Grid2 from "./components/Grid2";
 import bg from "./images/bg.svg";
@@ -13,8 +14,8 @@ const Background = styled.div`
     background-size: cover;
     background-position: top;
     padding: 200px 50px 200px 50px;
-
 `
+
 function App() {
   const [ data, setData ] = useState(null);
   
