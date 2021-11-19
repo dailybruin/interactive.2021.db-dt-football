@@ -77,9 +77,9 @@ justify-self: center;
 justify-content: center;
 `;
 
-const DBTextGrid = styled.div`
+const TextGrid = styled.div`
 display: grid;
-height: 75vh;
+height: 70vh;
 /* width: ; */
 margin-bottom: 0;
 margin-left: 2%;
@@ -126,7 +126,7 @@ export default function Grid1Mobile(props) {
         }
         else {
             return (
-                <DBTextGrid>
+                <TextGrid>
             {UCLASmallImages.map((ele, index) => {return (
                 <div onClick={() => {setUCLAimagePicked(index)}}>
                     {ele}
@@ -142,7 +142,7 @@ export default function Grid1Mobile(props) {
                     </Arrow>
                 </SeeMore>
             </TextBox>
-        </DBTextGrid>
+        </TextGrid>
 
             );
         }
@@ -174,7 +174,7 @@ export default function Grid1Mobile(props) {
         }
         else {
             return (
-                <DBTextGrid>
+                <TextGrid>
             {USCSmallImages.map((ele, index) => {return (
                 <div onClick={() => {setUSCimagePicked(index)}}>
                     {ele}
@@ -190,7 +190,7 @@ export default function Grid1Mobile(props) {
                     </Arrow>
                 </SeeMore>
             </TextBox>
-        </DBTextGrid>
+        </TextGrid>
 
             );
         }
@@ -264,10 +264,7 @@ export default function Grid1Mobile(props) {
     return (
         <>
         <DBGrid/>
-
-       <DTGrid/>
-
-
+        <DTGrid/>
         </>
     )
 }
