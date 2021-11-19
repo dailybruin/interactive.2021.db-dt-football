@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from 'styled-components';
+import '../App.css';
 
 const NormalGrid = styled.div`
 display: grid;
@@ -100,20 +101,24 @@ const DBText = styled.div`
 width: 95%;
 margin-left: 1%;
 color: black;
-background-color: red;
-font-family: 'Courier New', Courier, monospace;
+background-color: white;
+font-family: 'Open Sans Condensed', sans-serif;
 grid-area: ${(props) => props.direction};
 overflow-y:auto;
+align-items: center;
+text-align: center;
 `;
 
 const DTText = styled.div`
 width: 95%;
 margin-left: 4%;
 color: black;
-background-color: red;
-font-family: 'Courier New', Courier, monospace;
+background-color: white;
+font-family: 'Open Sans Condensed', sans-serif;
 grid-area: ${(props) => props.direction};
 overflow-y:auto;
+align-items: center;
+text-align: center;
 `;
 
 
@@ -250,12 +255,12 @@ export default function Grid1(props) {
 
             <DBText direction="db-text">
               {UCLAplayerPreviewText[UCLAimagePicked]}
-              <div onClick={()=>{setDBText(true)}}> READ MORE</div>
+              <div onClick={()=>{setDBText(true)}} style={{"font-family": "Open Sans Condensed", "font-weight": "1000"}}>read more</div>
               </DBText>
 
               <DTText direction="dt-text"t>
               {USCplayerPreviewText[USCimagePicked]}
-              <div onClick={()=>{setDTText(true)}}> READ MORE</div>
+              <div onClick={()=>{setDTText(true)}} style={{"font-family": "Open Sans Condensed", "font-weight": "1000"}}>read more</div>
               </DTText>
 
               {USCSmallImages.map((ele, ind) => {
@@ -276,12 +281,12 @@ export default function Grid1(props) {
 
             <DBText direction = "left">
             {UCLAplayerBigText[UCLAimagePicked]}
-              <div onClick={()=>{setDBText(false)}}> READ LESS</div>
+              <div onClick={()=>{setDBText(false)}} style={{"font-family": "Open Sans Condensed", "font-weight": "1000"}}>read less</div>
               </DBText>
 
               <DTText direction="dt-text">
               {USCplayerPreviewText[USCimagePicked]}
-              <div onClick={()=>{setDTText(true)}}> READ MORE</div>
+              <div onClick={()=>{setDTText(true)}} style={{"font-family": "Open Sans Condensed", "font-weight": "1000"}}>read less</div>
               </DTText>
 
 
