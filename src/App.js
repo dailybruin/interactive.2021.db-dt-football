@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import './App.css';
 import Navbar from "./components/Navbar";
 
+const bg = styled.div`
+  background-color: black;
+`
 function App() {
   const [ data, setData ] = useState(null);
   
@@ -13,9 +16,9 @@ function App() {
   }, [])
 
   return (
-    <Navbar />
-
-    // </Navbar>
+    <bg>
+      <Navbar />
+    </bg>
   );
 }
 
