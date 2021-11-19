@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './App.css';
+import Navbar from "./components/Navbar";
 import styled from 'styled-components';
 import Grid2 from "./components/Grid2";
 import bg from "./images/bg.svg";
@@ -23,6 +24,10 @@ const Background = styled.div`
     }
 `
 
+
+const bg = styled.div`
+  background-color: black;
+`
 function App() {
   const [ data, setData ] = useState(null);
   const media = window.matchMedia('(max-width: 450px)');
@@ -40,10 +45,13 @@ function App() {
   }, [])
 
   return (
+      
+
     (data &&
     <>
       <Landing data={data}/>
       <Background>
+        <Navbar />
         <CollabStory data={data['collab'][0]} />
         {isMobile && <MobileGrid2 isDB title={"Daily Bruin"} data={data.content}/>}
         {isMobile && <MobileGrid2 title={"Daily Trojan"} data={data.content}/>}
