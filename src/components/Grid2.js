@@ -70,9 +70,9 @@ export default function Grid2(props) {
     }
     
 
-    console.log(allData);
-    console.log(allData[1]);
-    console.log(combine);
+    // console.log(allData);
+    // console.log(allData[1]);
+    // console.log(combine);
 
     return (
         <>
