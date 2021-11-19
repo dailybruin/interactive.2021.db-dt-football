@@ -30,9 +30,9 @@ const News = styled.div`
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
     padding: 5px 10px 5px 10px;
-    /* display: -webkit-box;
+    display: -webkit-box;
     -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;   */
+    -webkit-box-orient: vertical;  
     overflow: hidden;
 
     ${mediaQueries.tablet} {
