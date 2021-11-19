@@ -3,22 +3,19 @@ import styled from 'styled-components';
 
 const NormalGrid = styled.div`
 display: grid;
-height: 70vh;
-/* width: ; */
-margin-left: 2%;
-margin-right: 2%;
-grid-template-columns: 90% 10%;
+height: 85vh;
+grid-template-columns: 70% 10% 20%;
 grid-template-rows: auto auto auto auto auto;
 grid-template-areas: 
-  "left right1"
-  "left right2"
-  "left right3"
-  "left right4"
-  "text right5"
+  "left left right1"
+  "left left right2"
+  "left left right3"
+  "left left right4"
+  "text arrow right5"
 `;
 
 const SmallImage = styled.div`
-  height: 13vh;
+  height: 15vh;
   width: 100%;
   object-fit: cover;
   background-image: url(${(props) => props.src});
@@ -41,35 +38,42 @@ const BigImage = styled.div`
   justify-self: center;
 `;
 
-const TextBox = styled.div`
-height: 90%;
-display: flex;
-margin-left: 2.5%;
-/* margin-right: 2.5%; */
-width: 94%;
-grid-area: ${(props) => props.direction};
-border-width: 10;
-border-style: solid;
-flex-direction: row;
-background-color: aliceblue;
-`
 
 const Text = styled.div`
 /* margin-right: 0; */
+max-height: 100%;
 width: 90%;
+z-index: 1000;
+margin-left: 2.5%;
+/* margin-right: 2.5%; */
+width: 94%;
+
+margin-bottom: 12px;
+grid-area: ${(props) => props.direction};
+border-width: 10;
+border-style: solid;
+overflow-y:auto;
+background-color: aliceblue;
 
 `
 const SeeMore = styled.div`
-background-color: #0C64985E;
+/* position: static; */
+/* right: 0; */
+/* margin-left: ; */
+background-color: #a5c5d9;
 justify-content: center;
-/* justify-self: center; */
-height: 100%;
-line-height: 100%;
+justify-self: center; 
+/* line-height: 100%; */
 text-align: center;
 text-justify: center;
-/* margin-top: */
-/* margin-left: 0%; */
-width: 10%;
+margin-left: -10px;
+width: 80%;
+/* margin-left: 10px; */
+/* width: 80%; */
+/* margin-left: 5px;
+margin-right: 5px; */
+grid-area: ${(props) => props.direction};
+margin-bottom: 12px;
 `;
 
 const Arrow = styled.div`
@@ -79,19 +83,17 @@ justify-content: center;
 
 const TextGrid = styled.div`
 display: grid;
-height: 70vh;
+height: 85vh;
 /* width: ; */
-margin-bottom: 0;
-margin-left: 2%;
-margin-right: 2%;
-grid-template-columns: 90% 10%;
+margin-bottom: 0px;
+grid-template-columns: 70% 10% 20%;
 grid-template-rows: auto auto auto auto auto;
 grid-template-areas: 
-  "text right1"
-  "text right2"
-  "text right3"
-  "text right4"
-  "text right5"
+  "text arrow right1"
+  "text arrow right2"
+  "text arrow right3"
+  "text arrow right4"
+  "text arrow right5"
 `;
 
 export default function Grid1Mobile(props) {
@@ -101,6 +103,7 @@ export default function Grid1Mobile(props) {
     const [ USCimagePicked, setUSCimagePicked ] = useState(0);
 
     function DBGrid() {
+        console.log(UCLAmainSources);
         if (!DBText_) {
             return (
             <NormalGrid>
@@ -112,14 +115,15 @@ export default function Grid1Mobile(props) {
 
             <BigImage direction="left" src={UCLAmainSources[UCLAimagePicked]}/>
 
-            <TextBox direction="text">
-                <Text>HELLO</Text>
-                <SeeMore onClick={()=> {setDBText(true)}}>
-                    <Arrow>
-                     {"\u2192"}  
-                    </Arrow>
-                </SeeMore>
-            </TextBox>
+            <Text direction="text">
+                {UCLAplayerPreviewText[UCLAimagePicked]}
+            </Text>
+
+            <SeeMore direction="arrow" onClick={()=> {setDBText(true)}}>
+                <Arrow>
+                    {"\u2192"}  
+                </Arrow>
+            </SeeMore>
         </NormalGrid>
 
             );
@@ -134,14 +138,23 @@ export default function Grid1Mobile(props) {
             )})}
 
 
-            <TextBox direction="text">
-                <Text>HELLO</Text>
+            
+                <Text>
+                {UCLAplayerBigText[UCLAimagePicked].map((ele, index)=> {
+                    return (
+                        <div>
+                        {ele.content}
+                        </div>
+                    );
+
+                })}
+                </Text>
                 <SeeMore onClick={()=> {setDBText(false)}}>
                     <Arrow>
                      {"\u2192"}  
                     </Arrow>
                 </SeeMore>
-            </TextBox>
+            
         </TextGrid>
 
             );
@@ -160,14 +173,14 @@ export default function Grid1Mobile(props) {
 
             <BigImage direction="left" src={USCmainSources[USCimagePicked]}/>
 
-            <TextBox direction="text">
+            
                 <Text>HELLO</Text>
                 <SeeMore onClick={()=> {setDTText(true)}}>
                     <Arrow>
                      {"\u2192"}  
                     </Arrow>
                 </SeeMore>
-            </TextBox>
+            
         </NormalGrid>
 
             );
@@ -182,14 +195,13 @@ export default function Grid1Mobile(props) {
             )})}
 
 
-            <TextBox direction="text">
+            
                 <Text>HELLO</Text>
                 <SeeMore onClick={()=> {setDTText(false)}}>
                     <Arrow>
                      {"\u2192"}  
                     </Arrow>
                 </SeeMore>
-            </TextBox>
         </TextGrid>
 
             );
@@ -198,30 +210,14 @@ export default function Grid1Mobile(props) {
     }
 
     let UCLAsideSources = [
-    "https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e.jpg", 
-    "https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e.jpg", 
-    "https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e.jpg",
-    "https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e.jpg",
-    "https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e.jpg"];
-    let UCLAmainSources = ["https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e.jpg", 
-    "https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e.jpg", 
-    "https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e.jpg",
-    "https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e.jpg",
-    "https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e.jpg"]
+    ];
+    let UCLAmainSources = []
 
     let UCLAplayerPreviewText = [];
     let UCLAplayerBigText = [];
 
-    let USCsideSources = ["https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e.jpg", 
-    "https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e.jpg", 
-    "https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e.jpg",
-    "https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e.jpg",
-    "https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e.jpg"];
-    let USCmainSources = ["https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e.jpg", 
-    "https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e.jpg", 
-    "https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e.jpg",
-    "https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e.jpg",
-    "https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e.jpg"];
+    let USCsideSources = [];
+    let USCmainSources = [];
 
     let USCplayerPreviewText = [];
     let USCplayerBigText = [];

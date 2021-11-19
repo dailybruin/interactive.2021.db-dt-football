@@ -4,12 +4,13 @@ import '../App.css';
 
 const NormalGrid = styled.div`
 display: grid;
-height: 80vh;
+height: 100vh;
+/* z-index: 2; */
 /* width: ; */
-margin-left: 10%;
-margin-right: 10%;
+/* margin-left: 10%;
+margin-right: 10%; */
 margin-bottom: 30px;
-grid-template-columns: 10% 40% 40% 10%;
+grid-template-columns: 15% 35% 35% 15%;
 grid-template-rows: auto auto auto auto auto auto;
 grid-template-areas: 
   "blue1 bigBlue bigRed red1"
@@ -22,12 +23,15 @@ grid-template-areas:
 
 const Title = styled.div`
     font-family: 'Press Start 2P';
-    position: absolute;
+    /* position: absolute; */
     top: -2px;
     left: 50%;
     transform: translate(-50%, -50%);
+    /* text-align: center; */
     font-style: normal;
     font-weight: normal;
+    /* margin-bottom: -10px; */
+    /* z-index: 10000; */
     font-size: 24px;
     line-height: 24px;
     width: 100%;
@@ -42,10 +46,10 @@ const Title = styled.div`
 
 const LeftTextGrid = styled.div`
 display: grid;
-height: 80vh;
+height: 100vh;
 /* width: ; */
-margin-left: 10%;
-margin-right: 10%;
+/* margin-left: 10%;
+margin-right: 10%; */
 margin-bottom: 30px;
 grid-template-columns: 10% 40% 40% 10%;
 grid-template-rows: auto auto auto auto auto auto;
@@ -60,10 +64,10 @@ grid-template-areas:
 
 const RightTextGrid = styled.div`
 display: grid;
-height: 80vh;
+height: 100vh;
 /* width: ; */
-margin-left: 10%;
-margin-right: 10%;
+/* margin-left: 10%;
+margin-right: 10%; */
 margin-bottom: 30px;
 grid-template-columns: 10% 40% 40% 10%;
 grid-template-rows: auto auto auto auto auto auto;
@@ -78,10 +82,11 @@ grid-template-areas:
 
 const BothSidesTextGrid = styled.div`
 display: grid;
-height: 80vh;
+height: 100vh;
 /* width: ; */
-margin-left: 10%;
-margin-right: 10%;
+/* margin-left: 10%;
+margin-right: 10%; */
+
 margin-bottom: 30px;
 grid-template-columns: 10% 40% 40% 10%;
 grid-template-rows: auto auto auto auto auto auto;
@@ -101,7 +106,7 @@ const SmallImag = styled.div`
   width: 90%;
   object-fit: cover;
   background-image: url(${(props) => props.src});
-  background-position: center;
+  background-position: top;
   background-size: cover;
   grid-area: ${(props) => props.direction};
   justify-content: center;
@@ -131,6 +136,7 @@ grid-area: ${(props) => props.direction};
 overflow-y:auto;
 align-items: center;
 text-align: center;
+height: auto;
 /* max-height: 50vh; */
 `;
 
@@ -241,7 +247,7 @@ export default function Grid1(props) {
     if (!DTText_ && !DBText_) {
           return (
             <>
-            <Title>Interactive</Title>
+            
               <NormalGrid>
               {UCLASmallImages.map((ele, index) => {
                 return (
@@ -280,7 +286,7 @@ export default function Grid1(props) {
         <>
         
               <LeftTextGrid>
-              <Title>Interactive</Title>
+             
               <BigImage direction="bigRed" src = {USCmainSources[USCimagePicked]}/>
 
             <DBText direction = "left">
@@ -317,7 +323,7 @@ export default function Grid1(props) {
 
       return (
               <RightTextGrid>
-                <Title>Interactive</Title>
+                
               {UCLASmallImages.map((ele, index) => {return (
                 <div onClick={() => {console.log(index); setUCLAimagePicked(index)}}>
                     {ele}

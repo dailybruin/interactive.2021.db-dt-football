@@ -82,7 +82,8 @@ function initializeReactGA() {
 
 
 function prepForGrid1(players) {
-  let arrOfPlayers = []
+  if (!isMobile) {
+    let arrOfPlayers = []
     players.ucla.forEach((ele, index) => {
       arrOfPlayers.push({
         id: "UCLA",
@@ -104,6 +105,32 @@ function prepForGrid1(players) {
     })  
     return arrOfPlayers;
   }
+  else {
+    let arrOfPlayers = []
+    players.ucla.forEach((ele, index) => {
+      arrOfPlayers.push({
+        id: "UCLA",
+        src: ele.thumbnail_link,
+        mainSrc: ele.mobile_image_link,
+        playerPreviewText: ele.preview,
+        playerBigText: ele.text
+      })
+    })
+
+    players.usc.forEach((ele, index) => {
+      arrOfPlayers.push({
+        id: "USC",
+        src: ele.thumbnail_link,
+        mainSrc: ele.mobile_image_link,
+        playerPreviewText: ele.preview,
+        playerBigText: ele.text
+      })
+    })  
+    return arrOfPlayers;
+  }
+
+  
+  }
  
   // google analytics
   initializeReactGA();
@@ -123,7 +150,8 @@ function prepForGrid1(players) {
         { firstTime ? scroller() : null }
         <Navbar/>
         <a name = '1'>
-          <Grid1 imageDetails={prepForGrid1(data.players[0])} />
+          {!isMobile && <Grid1 imageDetails={prepForGrid1(data.players[0])} />}
+          {isMobile && <Grid1Mobile imageDetails={prepForGrid1(data.players[0])}/>}
         </a>
         <a name='2'>
           <CollabStory data={data['collab'][0]} />
