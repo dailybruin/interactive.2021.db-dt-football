@@ -65,18 +65,19 @@ function CollabStory(props) {
 
   return (
     <div>
-      <CollabHeader data={props.data}/>
-      {
-        props.data && props.data['article_cards'].map((card, index) =>
-          <ArticleCard key={index}>
-            <ArticleImg src={card['image_link']}/>
-            <ArticleInfo>
-              <ArticleTitle href={card['article_link']}>{card['title']}</ArticleTitle>
-              <ArticleByline>{card['byline']}</ArticleByline>
-            </ArticleInfo>
-          </ArticleCard>
-        )
-      }
+        <CollabHeader data={props.data}/>
+      
+        {
+          props.data && props.data['article_cards'].map((card, index) =>
+            <ArticleCard key={index}>
+              <ArticleImg src={card['image_link']}/>
+              <ArticleInfo>
+                <ArticleTitle href={card['article_link']}>{card['title']}</ArticleTitle>
+                <ArticleByline>{card['byline']}</ArticleByline>
+              </ArticleInfo>
+            </ArticleCard>
+          )
+        }
     </div>
   );
 }

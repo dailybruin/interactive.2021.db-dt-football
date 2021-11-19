@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import styled from 'styled-components';
 import { mediaQueries } from "../shared/config";
 
@@ -39,6 +39,7 @@ const Gif = styled("div")`
 
 export default function Landing(props) 
 {
+
     const media = window.matchMedia('(max-width: 450px)');
     const [isMobile, setIsMobile] = useState(media.matches);
     media.addEventListener('change', () => {
@@ -48,12 +49,12 @@ export default function Landing(props)
     });
     console.log(props.data.landing_gif)
     return (
+      <>
         <Box>
             {!isMobile && <Gif src={props.data.landing_gif}/>}
             {isMobile && <Gif src={props.data.mobile_landing_gif}/>}
         </Box>
-        
-
+      </>
     )
 }
 

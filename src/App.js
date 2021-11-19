@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import './App.css';
 import HeaderAndSub from './Components/HeaderAndSub';
 import Navbar from "./Components/Navbar";
@@ -13,7 +13,7 @@ import CollabPodcast from "./Components/CollabPodcast"
 import CollabStory from "./Components/CollabStory";
 import MobileGrid2 from "./Components/MobileGrid2";
 import { mediaQueries } from "./shared/config";
-import Collaborative from "./Components/Collaborative"
+// import Collaborative from "./Components/Collaborative"
 import ReactGA from 'react-ga';
 
 const Background = styled.div`
@@ -39,6 +39,17 @@ function App() {
       setIsMobile(media.matches);
   }
   });
+
+  let myRef = useRef(null);
+  const [firstTime, setFirstTime] = useState(true);
+  const scroller = useCallback(() => {
+    setTimeout(() => {
+      if (myRef && myRef.current) {
+        myRef.current.scrollIntoView({behavior: 'smooth'})
+        setFirstTime(false)
+      }
+    }, 5000)
+  }, [myRef])
 
   useEffect(() => {
 		fetch("https://kerckhoff.dailybruin.com/api/packages/flatpages/interactive.rivalry2021/")
@@ -87,18 +98,31 @@ function prepForGrid1(players) {
       {console.log(data.players)}
 
       <Landing data={data}/>
+      <div ref={myRef}>
       <Background>
-        <HeaderAndSub/>
-        <Navbar/>
-        <CollabStory data={data['collab'][0]} />
-        <Grid1 imageDetails={prepForGrid1(data.players[0])}/>
-        {isMobile && <MobileGrid2 isDB title={"Daily Bruin"} data={data.content}/>}
-        {isMobile && <MobileGrid2 title={"Daily Trojan"} data={data.content}/>}
-        {!isMobile && <Grid2 data={data.content} />}
         
-        <CollabStory data={data['collab'][0]}/>
-        <CollabPodcast data={data['collab_podcast']}/>
+          <HeaderAndSub/>
+        
+        { firstTime ? scroller() : null }
+        <Navbar/>
+        <a name = '1'>
+          <Grid1 imageDetails={prepForGrid1(data.players[0])} />
+        </a>
+        <a name='2'>
+          <CollabStory data={data['collab'][0]} />
+        </a>
+        <a name='3'>
+          {isMobile && <MobileGrid2 isDB title={"Daily Bruin"} data={data.content}/>}
+          {isMobile && <MobileGrid2 title={"Daily Trojan"} data={data.content}/>}
+          {!isMobile && <Grid2 data={data.content} />}
+        </a>
+        
+        <a name='4'>
+          <CollabPodcast data={data['collab_podcast']}/>
+        </a>
+        
       </Background>
+      </div>
     </>
     )
   );
