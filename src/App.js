@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import './App.css';
 import HeaderAndSub from './Components/HeaderAndSub';
 import Navbar from "./Components/Navbar";
@@ -10,7 +10,6 @@ import CollabPodcast from "./Components/CollabPodcast"
 import CollabStory from "./Components/CollabStory";
 import MobileGrid2 from "./Components/MobileGrid2";
 import { mediaQueries } from "./shared/config";
-import Collaborative from "./Components/Collaborative"
 
 const Background = styled.div`
     background-color: #242424;
@@ -36,6 +35,17 @@ function App() {
   }
   });
 
+  let myRef = useRef(null);
+  const [firstTime, setFirstTime] = useState(true);
+  const scroller = useCallback(() => {
+    setTimeout(() => {
+      if (myRef && myRef.current) {
+        myRef.current.scrollIntoView({behavior: 'smooth'})
+        setFirstTime(false)
+      }
+    }, 5000)
+  }, [myRef])
+
   useEffect(() => {
 		fetch("https://kerckhoff.dailybruin.com/api/packages/flatpages/interactive.rivalry2021/")
 		.then(res => res.json())
@@ -47,15 +57,28 @@ function App() {
     (data &&
     <>
       <Landing data={data}/>
+      <div ref={myRef}>
       <Background>
-        <HeaderAndSub/>
+        
+          <HeaderAndSub/>
+        
+        { firstTime ? scroller() : null }
         <Navbar/>
-        <CollabStory data={data['collab'][0]} />
-        {isMobile && <MobileGrid2 isDB title={"Daily Bruin"} data={data.content}/>}
-        {isMobile && <MobileGrid2 title={"Daily Trojan"} data={data.content}/>}
-        {!isMobile && <Grid2 data={data.content} />}
-        <CollabPodcast data={data['collab_podcast']}/>
+        <a name='2'>
+          <CollabStory data={data['collab'][0]} />
+        </a>
+        <a name='3'>
+          {isMobile && <MobileGrid2 isDB title={"Daily Bruin"} data={data.content}/>}
+          {isMobile && <MobileGrid2 title={"Daily Trojan"} data={data.content}/>}
+          {!isMobile && <Grid2 data={data.content} />}
+        </a>
+        
+        <a name='4'>
+          <CollabPodcast data={data['collab_podcast']}/>
+        </a>
+        
       </Background>
+      </div>
     </>
     )
   );

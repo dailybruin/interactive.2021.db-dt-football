@@ -55,6 +55,7 @@ const Header = styled.div`
 `
 
 const Word = styled.div`
+    padding: 0px 20px 0px 10px;
     margin-bottom: 10px;
 `
 

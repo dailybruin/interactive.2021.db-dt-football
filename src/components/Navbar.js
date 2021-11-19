@@ -30,10 +30,10 @@ const Link = styled.a`
 const Navbar = () => {
     return (
         <Wrapper>
-            <Link href="https://dailybruin.com" target="_blank" rel="noreferrer nopener">INTERACTIVE</Link>
-            <Link href="https://dailybruin.com" target="_blank" rel="noreferrer nopener">COLLABORATION</Link>
-            <Link href="https://dailybruin.com" target="_blank" rel="noreferrer nopener">STORIES</Link>
-            <Link href="https://dailybruin.com" target="_blank" rel="noreferrer nopener">PODCAST</Link>
+            <Link href="#1" >INTERACTIVE</Link>
+            <Link href="#2" >COLLABORATION</Link>
+            <Link href="#3" >STORIES</Link>
+            <Link href="#4" >PODCAST</Link>
         </Wrapper>
     )
 }
