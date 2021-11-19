@@ -18,8 +18,8 @@ grid-template-areas:
 `;
 
 const SmallImage = styled.div`
-  height: 95%;
-  width: 95%;
+  height: 13vh;
+  width: 100%;
   object-fit: cover;
   background-image: url(${(props) => props.src});
   background-position: center;
@@ -75,13 +75,127 @@ width: 10%;
 const Arrow = styled.div`
 justify-self: center;
 justify-content: center;
-`
+`;
+
+const DBTextGrid = styled.div`
+display: grid;
+height: 75vh;
+/* width: ; */
+margin-bottom: 0;
+margin-left: 2%;
+margin-right: 2%;
+grid-template-columns: 90% 10%;
+grid-template-rows: auto auto auto auto auto;
+grid-template-areas: 
+  "text right1"
+  "text right2"
+  "text right3"
+  "text right4"
+  "text right5"
+`;
 
 export default function Grid1Mobile(props) {
     const [ DBText_, setDBText ] = useState(false);
     const [ DTText_, setDTText ] = useState(false);
     const [ UCLAimagePicked, setUCLAimagePicked ] = useState(0);
     const [ USCimagePicked, setUSCimagePicked ] = useState(0);
+
+    function DBGrid() {
+        if (!DBText_) {
+            return (
+            <NormalGrid>
+            {UCLASmallImages.map((ele, index) => {return (
+                <div onClick={() => {setUCLAimagePicked(index)}}>
+                    {ele}
+                </div> 
+            )})}
+
+            <BigImage direction="left" src={UCLAmainSources[UCLAimagePicked]}/>
+
+            <TextBox direction="text">
+                <Text>HELLO</Text>
+                <SeeMore onClick={()=> {setDBText(true)}}>
+                    <Arrow>
+                     {"\u2192"}  
+                    </Arrow>
+                </SeeMore>
+            </TextBox>
+        </NormalGrid>
+
+            );
+        }
+        else {
+            return (
+                <DBTextGrid>
+            {UCLASmallImages.map((ele, index) => {return (
+                <div onClick={() => {setUCLAimagePicked(index)}}>
+                    {ele}
+                </div> 
+            )})}
+
+
+            <TextBox direction="text">
+                <Text>HELLO</Text>
+                <SeeMore onClick={()=> {setDBText(false)}}>
+                    <Arrow>
+                     {"\u2192"}  
+                    </Arrow>
+                </SeeMore>
+            </TextBox>
+        </DBTextGrid>
+
+            );
+        }
+    }
+
+    function DTGrid() {
+        if (!DTText_) {
+            return (
+            <NormalGrid>
+            {USCSmallImages.map((ele, index) => {return (
+                <div onClick={() => {setUSCimagePicked(index)}}>
+                    {ele}
+                </div> 
+            )})}
+
+            <BigImage direction="left" src={USCmainSources[USCimagePicked]}/>
+
+            <TextBox direction="text">
+                <Text>HELLO</Text>
+                <SeeMore onClick={()=> {setDTText(true)}}>
+                    <Arrow>
+                     {"\u2192"}  
+                    </Arrow>
+                </SeeMore>
+            </TextBox>
+        </NormalGrid>
+
+            );
+        }
+        else {
+            return (
+                <DBTextGrid>
+            {USCSmallImages.map((ele, index) => {return (
+                <div onClick={() => {setUSCimagePicked(index)}}>
+                    {ele}
+                </div> 
+            )})}
+
+
+            <TextBox direction="text">
+                <Text>HELLO</Text>
+                <SeeMore onClick={()=> {setDTText(false)}}>
+                    <Arrow>
+                     {"\u2192"}  
+                    </Arrow>
+                </SeeMore>
+            </TextBox>
+        </DBTextGrid>
+
+            );
+        }
+
+    }
 
     let UCLAsideSources = [
     "https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e.jpg", 
@@ -149,44 +263,9 @@ export default function Grid1Mobile(props) {
 
     return (
         <>
-        <NormalGrid>
-            {UCLASmallImages.map((ele, index) => {return (
-                <div onClick={() => {setUCLAimagePicked(index)}}>
-                    {ele}
-                </div> 
-            )})}
+        <DBGrid/>
 
-            <BigImage direction="left" src={UCLAmainSources[UCLAimagePicked]}/>
-
-            <TextBox direction="text">
-                <Text>HELLO</Text>
-                <SeeMore>
-                    <Arrow>
-                     {"\u2192"}  
-                    </Arrow>
-                </SeeMore>
-            </TextBox>
-        </NormalGrid>
-
-        <NormalGrid>
-
-            <BigImage direction="left" src={USCmainSources[USCimagePicked]}/>
-
-            {USCSmallImages.map((ele, index) => {return (
-                    <div onClick={() => {console.log(index); setUSCimagePicked(index)}}>
-                        {ele}
-                    </div> 
-                )})}
-            <TextBox direction="text">
-            <Text>HELLO</Text>
-                <SeeMore>
-                    <Arrow>
-                     {"\u2192"}  
-                    </Arrow>
-                </SeeMore>
-            </TextBox>
-
-        </NormalGrid>
+       <DTGrid/>
 
 
         </>

@@ -32,7 +32,7 @@ function App() {
     <>
       <Landing/>
       <Background>
-        <Grid1/>
+        <Grid1Mobile/>
         <CollabStory data={data['collab'][0]}/>
         <Grid2/>
         <CollabPodcast/>
