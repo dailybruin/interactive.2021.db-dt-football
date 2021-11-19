@@ -127,7 +127,7 @@ const BigImage = styled.div`
 `;
 
 const DBText = styled.div`
-width: 95%;
+/* width: 95%; */
 margin-left: 1%;
 color: black;
 background-color: white;
@@ -137,6 +137,7 @@ overflow-y:auto;
 align-items: center;
 text-align: center;
 height: auto;
+
 /* max-height: 50vh; */
 `;
 
@@ -335,7 +336,7 @@ export default function Grid1(props) {
 
             <DBText direction="db-text" >
             {UCLAplayerPreviewText[UCLAimagePicked]}
-              <div onClick={()=>{setDBText(true)}}> READ MORE</div>
+              <div onClick={()=>{setDBText(true)}} style={{"font-family": "Open Sans Condensed", "font-weight": "1000"}}> read more</div>
             </DBText>
 
               <DTText direction="right">
@@ -352,7 +353,7 @@ export default function Grid1(props) {
                     {ele}
                 </div> )})}
 
-              <div onClick={()=>{setDTText(false)}}> READ LESS</div>
+              <div onClick={()=>{setDTText(false)}} style={{"font-family": "Open Sans Condensed", "font-weight": "1000"}}> read less</div>
               </DTText>
 
               </RightTextGrid>
@@ -370,7 +371,7 @@ export default function Grid1(props) {
                 </div>
               );
             })}
-              <div onClick={()=>{setDBText(false)}}> READ LESS</div>
+              <div onClick={()=>{setDBText(false)}} style={{"font-family": "Open Sans Condensed", "font-weight": "1000"}}> read less </div>
               </DBText>
 
               <DTText direction="right">
@@ -381,7 +382,7 @@ export default function Grid1(props) {
                 </p>
               );
             })}
-              <div onClick={()=>{setDTText(false)}}> READ LESS</div>
+              <div onClick={()=>{setDTText(false)}} style={{"font-family": "Open Sans Condensed", "font-weight": "1000"}}> read less </div>
               </DTText>
 
               </BothSidesTextGrid>

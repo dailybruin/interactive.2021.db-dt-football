@@ -128,6 +128,7 @@ export default function Grid1Mobile(props) {
 
             );
         }
+
         else {
             return (
                 <TextGrid>
@@ -139,7 +140,7 @@ export default function Grid1Mobile(props) {
 
 
             
-                <Text>
+                <Text direction = "text">
                 {UCLAplayerBigText[UCLAimagePicked].map((ele, index)=> {
                     return (
                         <div>
@@ -149,7 +150,7 @@ export default function Grid1Mobile(props) {
 
                 })}
                 </Text>
-                <SeeMore onClick={()=> {setDBText(false)}}>
+                <SeeMore direction="arrow" onClick={()=> {setDBText(false)}}>
                     <Arrow>
                      {"\u2192"}  
                     </Arrow>
@@ -174,8 +175,13 @@ export default function Grid1Mobile(props) {
             <BigImage direction="left" src={USCmainSources[USCimagePicked]}/>
 
             
-                <Text>HELLO</Text>
-                <SeeMore onClick={()=> {setDTText(true)}}>
+                
+                <Text direction="text">
+                {USCplayerPreviewText[USCimagePicked]}
+            </Text>
+
+            
+                <SeeMore direction="arrow" onClick={()=> {setDTText(true)}}>
                     <Arrow>
                      {"\u2192"}  
                     </Arrow>
@@ -185,6 +191,7 @@ export default function Grid1Mobile(props) {
 
             );
         }
+
         else {
             return (
                 <TextGrid>
@@ -196,8 +203,17 @@ export default function Grid1Mobile(props) {
 
 
             
-                <Text>HELLO</Text>
-                <SeeMore onClick={()=> {setDTText(false)}}>
+                <Text direction="text">
+                {USCplayerBigText[USCimagePicked].map((ele, index)=> {
+                    return (
+                        <div>
+                        {ele.content}
+                        </div>
+                    );
+
+                })}
+                </Text>
+                <SeeMore direction="arrow"onClick={()=> {setDTText(false)}}>
                     <Arrow>
                      {"\u2192"}  
                     </Arrow>
