@@ -11,6 +11,7 @@ const Box = styled.a`
     min-height: 200px;
     background-color: white;
     color: black;
+    /* overflow: visible; */
     &:hover{
         box-shadow: 5px 5px 5px rgba(0,0,0);
     }
@@ -25,12 +26,13 @@ flex: 1 280px;
 `;
 
 const News = styled.div`
+    word-wrap: break-word;
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
     padding: 5px 10px 5px 10px;
-    display: -webkit-box;
+    /* display: -webkit-box;
     -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;  
+    -webkit-box-orient: vertical;   */
     overflow: hidden;
 
     ${mediaQueries.tablet} {
@@ -48,7 +50,7 @@ padding: 10px;
 
 const Image = styled.img`
   flex: 1 330px;
-  height: 200px;
+  min-height: 200px;
   width: 50%;
   object-fit: cover;
   background-image: url(${(props) => props.src});
@@ -85,7 +87,6 @@ export default function ArticleBox(props) {
                     </NewsAnchor>
                     <Author> {author} </Author>
                 </Text>
-                
                     <Image color={color} image = {image} src={image} alt=""/>
                       
             </Box>
