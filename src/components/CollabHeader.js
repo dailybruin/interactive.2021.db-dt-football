@@ -13,6 +13,7 @@ function CollabHeader(props) {
     position: relative;
     /* margin: 20px auto; */
     margin-bottom: 15px;
+    margin-top: 20px;
     /* max-width: 1252px; */
     /* width: 90%; */
     padding: ${props.data['intro_text'] ? '15px 2%' : '7px 2%'};
