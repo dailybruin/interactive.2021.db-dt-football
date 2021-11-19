@@ -66,6 +66,7 @@ function CollabPodcast(props) {
         intro_text: ''
       }}/>
       {
+        
         props.data && props.data.map((card, index) =>
           <PodcastCard key={index}>
             <PodcastImg src={card['image_link']}/>

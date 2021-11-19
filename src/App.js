@@ -9,6 +9,7 @@ import bg from "./images/bg.svg";
 import Landing from './components/Landing';
 import CollabPodcast from "./components/CollabPodcast";
 import CollabStory from "./components/CollabStory";
+import ReactGA from 'react-ga';
 
 const Background = styled.div`
     background-color: #242424;
@@ -18,8 +19,17 @@ const Background = styled.div`
     padding: 200px 50px 200px 50px;
 
 `
+// google analytics
+function initializeReactGA() {
+  ReactGA.initialize('294117319');
+  ReactGA.pageview('/homepage');
+}
+
 function App() {
   const [ data, setData ] = useState(null);
+
+  // google analytics
+  initializeReactGA();
   
   useEffect(() => {
 		fetch("https://kerckhoff.dailybruin.com/api/packages/flatpages/interactive.rivalry2021/")

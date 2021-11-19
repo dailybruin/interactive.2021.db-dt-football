@@ -19,6 +19,26 @@ grid-template-areas:
   "db-text db-text dt-text dt-text"
 `;
 
+const Title = styled.div`
+    font-family: 'Press Start 2P';
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 24px;
+    width: 100%;
+    text-shadow:
+            1px 1px 0 #fff, -1px 1px 0 #fff, 1px -1px 0 #fff, -1px -1px 0 #fff,
+            0px 1px 0 #fff, 0px -1px 0 #fff, -1px 0px 0 #fff, 1px 0px 0 #fff,
+            2px 2px 0 #fff, -2px 2px 0 #fff, 2px -2px 0 #fff, -2px -2px 0 #fff,
+            0px 2px 0 #fff, 0px -2px 0 #fff, -2px 0px 0 #fff, 2px 0px 0 #fff,
+            1px 2px 0 #fff, -1px 2px 0 #fff, 1px -2px 0 #fff, -1px -2px 0 #fff,
+            2px 1px 0 #fff, -2px 1px 0 #fff, 2px -1px 0 #fff, -2px -1px 0 #fff;
+  `;
+
 const LeftTextGrid = styled.div`
 display: grid;
 height: 50vh;
@@ -243,6 +263,8 @@ export default function Grid1(props) {
 
     if (!DTText_ && !DBText_) {
           return (
+            <>
+            <Title>Interactive</Title>
               <NormalGrid>
               {UCLASmallImages.map((ele, index) => {
                 return (
@@ -271,12 +293,16 @@ export default function Grid1(props) {
                 
             )})}
               </NormalGrid>
+              </>
           );
     }
 
     if (DBText_ && !DTText_) {
       return (
+        <>
+        
               <LeftTextGrid>
+              <Title>Interactive</Title>
               <BigImage direction="bigRed" src = {USCmainSources[USCimagePicked]}/>
 
             <DBText direction = "left">
@@ -297,6 +323,7 @@ export default function Grid1(props) {
                 </div> )})}
 
               </LeftTextGrid>
+              </>
           );
 
 
@@ -306,6 +333,7 @@ export default function Grid1(props) {
 
       return (
               <RightTextGrid>
+                <Title>Interactive</Title>
               {UCLASmallImages.map((ele, index) => {return (
                 <div onClick={() => {console.log(index); setUCLAimagePicked(index)}}>
                     {ele}
@@ -337,7 +365,6 @@ export default function Grid1(props) {
     if (DBText_ && DTText_) {
       return (
               <BothSidesTextGrid>
-              
             <DBText direction="left">
             {UCLAplayerBigText[UCLAimagePicked]}
               <div onClick={()=>{setDBText(false)}}> READ LESS</div>
