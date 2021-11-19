@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './App.css';
+import Subheader from './components/Subheader';
 import Navbar from "./Components/Navbar";
 import styled from 'styled-components';
 import Grid2 from "./Components/Grid2";
@@ -22,7 +23,7 @@ const Background = styled.div`
     ${mediaQueries.tablet} {
       padding: 200px 20px 200px 20px;
     }
-`
+
 
 function App() {
   const [ data, setData ] = useState(null);
@@ -41,7 +42,6 @@ function App() {
   }, [])
 
   return (
-      
 
     (data &&
     <>
