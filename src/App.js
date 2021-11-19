@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './App.css';
-import Subheader from './components/Subheader';
+import HeaderAndSub from './Components/HeaderAndSub';
 import Navbar from "./Components/Navbar";
 import styled from 'styled-components';
 import Grid2 from "./Components/Grid2";
@@ -18,11 +18,12 @@ const Background = styled.div`
     background-size: cover;
     background-position: top;
 
-    padding: 200px 100px 200px 100px;
+    padding: 50px 100px 200px 100px;
 
     ${mediaQueries.tablet} {
-      padding: 200px 20px 200px 20px;
+      padding: 50px 20px 200px 20px;
     }
+`
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
     <>
       <Landing data={data}/>
       <Background>
+        <HeaderAndSub/>
         <Navbar/>
         <CollabStory data={data['collab'][0]} />
         {isMobile && <MobileGrid2 isDB title={"Daily Bruin"} data={data.content}/>}
