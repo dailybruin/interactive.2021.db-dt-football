@@ -293,9 +293,9 @@ export default function Grid1(props) {
             <DBText direction = "left">
             {(UCLAplayerBigText[UCLAimagePicked]).map((ele, index)=> {
               return (
-                <div>
+                <p>
                 {ele.content}
-                </div>
+                </p>
               );
             })}
               <div onClick={()=>{setDBText(false)}} style={{"font-family": "Open Sans Condensed", "font-weight": "1000"}}>read less</div>
@@ -366,9 +366,9 @@ export default function Grid1(props) {
             <DBText direction="left">
             {(UCLAplayerBigText[UCLAimagePicked]).map((ele, index)=> {
               return (
-                <div>
+                <p>
                 {ele.content}
-                </div>
+                </p>
               );
             })}
               <div onClick={()=>{setDBText(false)}} style={{"font-family": "Open Sans Condensed", "font-weight": "1000"}}> read less </div>
