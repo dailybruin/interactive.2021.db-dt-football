@@ -22,7 +22,7 @@ const Background = styled.div`
     background-size: cover;
     background-position: top;
 
-    padding: 50px 100px 200px 50px;
+    padding: 50px 100px 200px 100px;
 
     ${mediaQueries.tablet} {
       padding: 50px 20px 40px 20px;
