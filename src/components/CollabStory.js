@@ -40,6 +40,7 @@ function CollabStory(props) {
       min-height: 200px;
     }
   `;
+
   const ArticleInfo = styled.div`
     padding: 26px 2%;
 
@@ -72,8 +73,10 @@ function CollabStory(props) {
       
         {
           props.data && props.data['article_cards'].map((card, index) =>
-            <ArticleCard key={index}>
+            <ArticleCard href={card['article_link']} key={index}>
+              <a href={card['article_link']}>
               <ArticleImg src={card['image_link']}/>
+              </a>
               <ArticleInfo>
                 <ArticleTitle href={card['article_link']}>{card['title']}</ArticleTitle>
                 <ArticleByline>{card['byline']}</ArticleByline>

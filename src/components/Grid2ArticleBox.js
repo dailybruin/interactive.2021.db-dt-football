@@ -2,14 +2,15 @@ import React from "react";
 import styled from 'styled-components';
 import { mediaQueries } from "../shared/config";
 
-const Box = styled.div`
+const Box = styled.a`
     display: flex;
+    text-decoration: none;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     min-height: 200px;
     background-color: white;
-
+    color: black;
     &:hover{
         box-shadow: 5px 5px 5px rgba(0,0,0);
     }
@@ -45,11 +46,12 @@ font-size: 10px;
 padding: 10px;
 `;
 
-const Image = styled.a`
+const Image = styled.img`
   flex: 1 330px;
-  height: 100%;
+  height: 200px;
+  width: 50%;
   object-fit: cover;
-  background-image: url(${(props) => props.image});
+  background-image: url(${(props) => props.src});
   background-position: center;
   background-size: cover;
   border-left-width: 7px;
@@ -76,7 +78,7 @@ export default function ArticleBox(props) {
     }
 
     return (
-            <Box> 
+            <Box href={props.url}> 
                 <Text>
                     <NewsAnchor href={props.url}>
                     <News> {text} </News>
@@ -84,7 +86,8 @@ export default function ArticleBox(props) {
                     <Author> {author} </Author>
                 </Text>
                 
-                <Image href = {props.url} color={color} image = {image} src="" alt=""/>
+                    <Image color={color} image = {image} src={image} alt=""/>
+                      
             </Box>
         
     );
