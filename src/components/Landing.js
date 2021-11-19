@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
-
+import { mediaQueries } from "../shared/config";
 
 
 const Credits = styled("div")`
@@ -9,6 +9,11 @@ const Credits = styled("div")`
   right: 50px;
   color: black;
   font-weight: bold;
+  font-family: 'Open Sans Condensed', sans-serif;
+  ${mediaQueries.tablet} {
+      right: 20px;
+      font-size: 12px;
+  }
 `;
 
 
@@ -28,16 +33,24 @@ const Gif = styled("div")`
   background-position: center;
   background-size: cover;
   position: relative;
-  background-image: url("https://endlessicons.com/wp-content/uploads/2012/11/image-holder-icon-614x460.png");
+  background-image: url(${(props) => props.src});
 `;
 
 
 export default function Landing(props) 
 {
+    const media = window.matchMedia('(max-width: 450px)');
+    const [isMobile, setIsMobile] = useState(media.matches);
+    media.addEventListener('change', () => {
+    if (media.matches !== isMobile) {
+        setIsMobile(media.matches);
+    }
+    });
+    console.log(props.data.landing_gif)
     return (
         <Box>
-            <Gif/>
-            <Credits>CREDITS HERE</Credits>
+            {!isMobile && <Gif src={props.data.landing_gif}/>}
+            {isMobile && <Gif src={props.data.mobile_landing_gif}/>}
         </Box>
         
 
