@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './App.css';
+import Collaborative from "./Components/Collaborative";
 import styled from 'styled-components';
 import Grid2 from "./components/Grid2";
 import bg from "./images/bg.svg";
@@ -14,13 +15,14 @@ const Background = styled.div`
     background-image: url(${bg});
     background-size: cover;
     background-position: top;
+
     padding: 200px 100px 200px 100px;
 
     ${mediaQueries.tablet} {
       padding: 200px 20px 200px 20px;
     }
-
 `
+
 function App() {
   const [ data, setData ] = useState(null);
   const media = window.matchMedia('(max-width: 450px)');
