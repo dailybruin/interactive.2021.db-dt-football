@@ -33,7 +33,7 @@ const Gif = styled("div")`
   background-position: center;
   background-size: cover;
   position: relative;
-  background-image: url($${(props) => props.src});
+  background-image: url(${(props) => props.src});
 `;
 
 

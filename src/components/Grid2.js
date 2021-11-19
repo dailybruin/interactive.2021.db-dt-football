@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
-import Grid2ArticleBox from '../components/Grid2ArticleBox';
+import Grid2ArticleBox from './Grid2ArticleBox';
 
 const Grid = styled.div`
 display: grid;

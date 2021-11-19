@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import './App.css';
-import Navbar from "./components/Navbar";
+import Navbar from "./Components/Navbar";
 import styled from 'styled-components';
-import Grid2 from "./components/Grid2";
+import Grid2 from "./Components/Grid2";
 import bg from "./images/bg.svg";
-import Landing from './components/Landing';
-import CollabPodcast from "./components/CollabPodcast";
-import CollabStory from "./components/CollabStory";
-import MobileGrid2 from "./components/MobileGrid2";
+import Landing from './Components/Landing';
+import CollabPodcast from "./Components/CollabPodcast"
+import CollabStory from "./Components/CollabStory";
+import MobileGrid2 from "./Components/MobileGrid2";
 import { mediaQueries } from "./shared/config";
-import Collaborative from "./components/Collaborative"
+import Collaborative from "./Components/Collaborative"
 
 const Background = styled.div`
     background-color: #242424;
@@ -24,10 +24,6 @@ const Background = styled.div`
     }
 `
 
-
-const bg = styled.div`
-  background-color: black;
-`
 function App() {
   const [ data, setData ] = useState(null);
   const media = window.matchMedia('(max-width: 450px)');
@@ -51,7 +47,7 @@ function App() {
     <>
       <Landing data={data}/>
       <Background>
-        <Navbar />
+        <Navbar/>
         <CollabStory data={data['collab'][0]} />
         {isMobile && <MobileGrid2 isDB title={"Daily Bruin"} data={data.content}/>}
         {isMobile && <MobileGrid2 title={"Daily Trojan"} data={data.content}/>}
