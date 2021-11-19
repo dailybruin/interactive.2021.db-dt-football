@@ -5,28 +5,32 @@ import CollabHeader from "./CollabHeader";
 import ShareIcon from '../share.png';
 import PodcastBackground from '../podcast_background.png';
 
+
+
 function CollabPodcast(props) {
   const PodcastCard = styled.div`
     box-sizing: border-box;
-    font-family: 'Gotham Condensed';
+    font-family: 'Poppins', sans-serif;
     font-size: 24px;
     line-height: 140%;
     background-color: white;
-    margin: 30px auto;
+    /* margin: 30px auto; */
     text-align: left;
-    max-width: 1252px;
-    width: 90%;
+    /* max-width: 1252px; */
+    /* width: 90%; */
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     position: relative;
     background-image: url(${PodcastBackground});
-    background-repeat: no-repeat;
-    background-position: 100% calc(100% - 40px);
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+    /* background-position: 100% calc(100% - 40px); */
+    background-position: center;
   `;
   const PodcastImg = styled.img`
-    height: 366px;
-    width: 366px;
+    /* height: 366px; */
+    width: 40%;
     z-index: 1;
     @media screen and (max-width: 767px) {
       width: 100%;
@@ -37,12 +41,13 @@ function CollabPodcast(props) {
     padding: 26px 5% 40px 5%;
   `;
   const PodcastTitle = styled.a`
-    max-width: 573px;
+    /* max-width: 573px; */
     color: black;
     text-decoration: none;
   `;
   const PodcastByline = styled.div`
-    font-family: 'Press Start 2P';
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
     font-size: 12px;
     line-height: 12px;
     text-transform: uppercase;

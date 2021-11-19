@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
-
+import { mediaQueries } from "../shared/config";
 
 
 const Credits = styled("div")`
@@ -9,6 +9,11 @@ const Credits = styled("div")`
   right: 50px;
   color: black;
   font-weight: bold;
+  font-family: 'Open Sans Condensed', sans-serif;
+  ${mediaQueries.tablet} {
+      right: 20px;
+      font-size: 12px;
+  }
 `;
 
 
@@ -34,10 +39,17 @@ const Gif = styled("div")`
 
 export default function Landing(props) 
 {
+    // const media = window.matchMedia('(max-width: 450px)');
+    // const [isMobile, setIsMobile] = useState(media.matches);
+    // media.addEventListener('change', () => {
+    // if (media.matches !== isMobile) {
+    //     setIsMobile(media.matches);
+    // }
+    // });
     return (
         <Box>
             <Gif/>
-            <Credits>CREDITS HERE</Credits>
+            <Credits>{props.creds}</Credits>
         </Box>
         
 
