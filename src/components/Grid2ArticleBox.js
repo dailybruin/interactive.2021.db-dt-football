@@ -45,7 +45,7 @@ font-size: 10px;
 padding: 10px;
 `;
 
-const Image = styled.div`
+const Image = styled.a`
   flex: 1 330px;
   height: 100%;
   object-fit: cover;
@@ -83,7 +83,8 @@ export default function ArticleBox(props) {
                     </NewsAnchor>
                     <Author> {author} </Author>
                 </Text>
-                <Image color={color} image = {image} src="" alt=""/>
+                
+                <Image href = {props.url} color={color} image = {image} src="" alt=""/>
             </Box>
         
     );
