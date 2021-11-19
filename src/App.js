@@ -76,7 +76,7 @@ function App() {
 
 // google analytics
 function initializeReactGA() {
-  ReactGA.initialize('294117319');
+  ReactGA.initialize('UA-28181852-33');
   ReactGA.pageview('/homepage');
 }
 
