@@ -168,8 +168,8 @@ function prepForGrid1(players) {
 
         <Footer>
           <Text>
-          Built with Suzy’s ♥ in Kerckhoff 118 by Sunny Li, Aritra Mullick, Mark Benliyan, Janis Chen, Camille Chou, Selina Huynh, Maggie Li, Tracy Zhao, Angad. 
-          <br/>Also thanks to Shuning Zhang's help from Daily Trojan. <br/>Designed by Lauren Ho and Alyssa Shao.
+          Built with Suzy’s ♥ in Kerckhoff 118 by Sunny Li, Aritra Mullick, Mark Benliyan, Janis Chen, Camille Chou, Selina Huynh, Maggie Li, Tracy Zhao and Angad Kapoor. 
+          <br/>Also thanks to Shuning Zhang from Daily Trojan. <br/>Designed by Lauren Ho and Alyssa Shao.
           </Text>
         
         </Footer>
