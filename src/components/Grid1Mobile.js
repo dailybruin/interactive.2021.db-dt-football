@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const NormalGrid = styled.div`
 display: grid;
 height: 85vh;
+font-family: 'Open Sans Condensed', sans-serif;
 grid-template-columns: 70% 10% 20%;
 grid-template-rows: auto auto auto auto auto;
 grid-template-areas: 
@@ -43,11 +44,12 @@ const Text = styled.div`
 /* margin-right: 0; */
 max-height: 100%;
 width: 90%;
+font-family: 'Open Sans Condensed', sans-serif;
 z-index: 1000;
 margin-left: 2.5%;
 /* margin-right: 2.5%; */
 width: 94%;
-
+text-align: center;
 margin-bottom: 12px;
 grid-area: ${(props) => props.direction};
 border-width: 10;
@@ -116,7 +118,7 @@ export default function Grid1Mobile(props) {
 
             <BigImage direction="left" src={UCLAmainSources[UCLAimagePicked]}/>
 
-            <Text direction="text">
+            <Text direction="text" style={{"font-family": "Open Sans Condensed", "font-weight": "1000"}}>
                 {UCLAplayerPreviewText[UCLAimagePicked]}
             </Text>
 
@@ -144,9 +146,9 @@ export default function Grid1Mobile(props) {
                 <Text direction = "text">
                 {UCLAplayerBigText[UCLAimagePicked].map((ele, index)=> {
                     return (
-                        <div>
+                        <p style={{"font-family": "Open Sans Condensed", "font-weight": "1000"}}>
                         {ele.content}
-                        </div>
+                        </p>
                     );
 
                 })}
@@ -177,7 +179,7 @@ export default function Grid1Mobile(props) {
 
             
                 
-                <Text direction="text">
+                <Text direction="text" style={{"font-family": "Open Sans Condensed", "font-weight": "1000"}}>
                 {USCplayerPreviewText[USCimagePicked]}
             </Text>
 
@@ -207,9 +209,9 @@ export default function Grid1Mobile(props) {
                 <Text direction="text">
                 {USCplayerBigText[USCimagePicked].map((ele, index)=> {
                     return (
-                        <div>
+                        <p style={{"font-family": "Open Sans Condensed", "font-weight": "1000"}}>
                         {ele.content}
-                        </div>
+                        </p>
                     );
 
                 })}

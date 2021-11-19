@@ -5,6 +5,7 @@ import '../App.css';
 const NormalGrid = styled.div`
 display: grid;
 height: 100vh;
+font-family: 'Open Sans Condensed', sans-serif;
 /* z-index: 2; */
 /* width: ; */
 /* margin-left: 10%;
@@ -47,6 +48,7 @@ const Title = styled.div`
 const LeftTextGrid = styled.div`
 display: grid;
 height: 100vh;
+font-family: 'Open Sans Condensed', sans-serif;
 /* width: ; */
 /* margin-left: 10%;
 margin-right: 10%; */
