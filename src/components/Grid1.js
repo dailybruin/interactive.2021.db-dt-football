@@ -4,10 +4,11 @@ import '../App.css';
 
 const NormalGrid = styled.div`
 display: grid;
-height: 50vh;
+height: 80vh;
 /* width: ; */
 margin-left: 10%;
 margin-right: 10%;
+margin-bottom: 30px;
 grid-template-columns: 10% 40% 40% 10%;
 grid-template-rows: auto auto auto auto auto auto;
 grid-template-areas: 
@@ -41,10 +42,11 @@ const Title = styled.div`
 
 const LeftTextGrid = styled.div`
 display: grid;
-height: 50vh;
+height: 80vh;
 /* width: ; */
 margin-left: 10%;
 margin-right: 10%;
+margin-bottom: 30px;
 grid-template-columns: 10% 40% 40% 10%;
 grid-template-rows: auto auto auto auto auto auto;
 grid-template-areas: 
@@ -58,10 +60,11 @@ grid-template-areas:
 
 const RightTextGrid = styled.div`
 display: grid;
-height: 50vh;
+height: 80vh;
 /* width: ; */
 margin-left: 10%;
 margin-right: 10%;
+margin-bottom: 30px;
 grid-template-columns: 10% 40% 40% 10%;
 grid-template-rows: auto auto auto auto auto auto;
 grid-template-areas: 
@@ -75,10 +78,11 @@ grid-template-areas:
 
 const BothSidesTextGrid = styled.div`
 display: grid;
-height: 50vh;
+height: 80vh;
 /* width: ; */
 margin-left: 10%;
 margin-right: 10%;
+margin-bottom: 30px;
 grid-template-columns: 10% 40% 40% 10%;
 grid-template-rows: auto auto auto auto auto auto;
 grid-template-areas: 
@@ -127,6 +131,7 @@ grid-area: ${(props) => props.direction};
 overflow-y:auto;
 align-items: center;
 text-align: center;
+/* max-height: 50vh; */
 `;
 
 const DTText = styled.div`
@@ -250,7 +255,7 @@ export default function Grid1(props) {
             <DBText direction="db-text">
               {UCLAplayerPreviewText[UCLAimagePicked]}
               <div onClick={()=>{setDBText(true)}} style={{"font-family": "Open Sans Condensed", "font-weight": "1000"}}>read more</div>
-              </DBText>
+            </DBText>
 
               <DTText direction="dt-text">
               {USCplayerPreviewText[USCimagePicked]}
