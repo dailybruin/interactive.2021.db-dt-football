@@ -49,7 +49,6 @@ export default function Landing(props)
     return (
         <Box>
             <Gif/>
-            <Credits>{props.creds}</Credits>
         </Box>
         
 

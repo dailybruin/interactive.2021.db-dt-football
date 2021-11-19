@@ -18,6 +18,7 @@ const Container = styled.div`
     height: 50vh;
     background-color: white;
     text-align: left;
+    margin-bottom: 50px;
 `;
 
 const TextBox = styled.div`
@@ -26,7 +27,6 @@ const TextBox = styled.div`
     bottom: 0;
     width: 100%;
     height: 30%;
-    border: 2px solid black;
     text-align: left;
 `;
 
@@ -47,7 +47,6 @@ const Author = styled.div`
 export default function Collaborative(props) {
     return (
         <div> 
-            <Description>Description for collab story description for collab story description for collab story description for collab story description for collab story description for collab story description for collab story.</Description>
             <Container src={RivalryImage}>
                 <TextBox>
                     <Title> Article Title </Title>

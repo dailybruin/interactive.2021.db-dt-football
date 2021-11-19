@@ -12,11 +12,14 @@ function CollabHeader(props) {
     background-color: white;
     position: relative;
     /* margin: 20px auto; */
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     /* max-width: 1252px; */
     /* width: 90%; */
     padding: ${props.data['intro_text'] ? '15px 2%' : '7px 2%'};
+
+
   `;
+
   const CollabTitle = styled.div`
     font-family: 'Press Start 2P';
     position: absolute;
@@ -44,6 +47,10 @@ function CollabHeader(props) {
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
     line-height: 130.8%;
+
+    ${mediaQueries.tablet} {
+      font-size: 10px;
+    }
   `;
   console.log(props.data)
   return (

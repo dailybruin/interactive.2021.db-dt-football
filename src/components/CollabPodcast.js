@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import CollabHeader from "./CollabHeader";
 import ShareIcon from '../share.png';
 import PodcastBackground from '../podcast_background.png';
+import { mediaQueries } from "../shared/config";
 
 
 
@@ -14,7 +15,7 @@ function CollabPodcast(props) {
     font-size: 24px;
     line-height: 140%;
     background-color: white;
-    /* margin: 30px auto; */
+    margin: 40px 50px 15px 50px;
     text-align: left;
     /* max-width: 1252px; */
     /* width: 90%; */
@@ -27,14 +28,31 @@ function CollabPodcast(props) {
     /* background-repeat: no-repeat; */
     /* background-position: 100% calc(100% - 40px); */
     background-position: center;
+    &:hover{
+        box-shadow: 5px 5px 5px rgba(0,0,0);
+    }
+
+    ${mediaQueries.tablet} {
+      font-size: 20px;
+      margin: 0px 0px 30px 0px;
+    }
   `;
-  const PodcastImg = styled.img`
-    /* height: 366px; */
+  const PodcastImg = styled.div`
+    /* height: 366px;
     width: 40%;
     z-index: 1;
     @media screen and (max-width: 767px) {
       width: 100%;
-      height: auto;
+      m
+    } */
+    width: 100%;
+    min-height: 400px;
+    background-image: url(${props=>props.src});
+    background-position: center;
+    background-size: cover;
+
+    ${mediaQueries.tablet} {
+      min-height: 200px;
     }
   `;
   const PodcastInfo = styled.div`

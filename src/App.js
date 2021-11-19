@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import './App.css';
-import Collaborative from "./Components/Collaborative";
 import styled from 'styled-components';
 import Grid2 from "./components/Grid2";
 import bg from "./images/bg.svg";
@@ -9,6 +8,7 @@ import CollabPodcast from "./components/CollabPodcast";
 import CollabStory from "./components/CollabStory";
 import MobileGrid2 from "./components/MobileGrid2";
 import { mediaQueries } from "./shared/config";
+import Collaborative from "./components/Collaborative"
 
 const Background = styled.div`
     background-color: #242424;

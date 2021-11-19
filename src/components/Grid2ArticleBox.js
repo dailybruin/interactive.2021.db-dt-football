@@ -1,5 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
+import { mediaQueries } from "../shared/config";
 
 const Box = styled.div`
     display: flex;
@@ -13,6 +14,9 @@ const Box = styled.div`
         box-shadow: 5px 5px 5px rgba(0,0,0);
     }
 
+    ${mediaQueries.tablet} {
+      min-height: 150px;
+    }
 `;
 
 const Text = styled.div`
@@ -27,6 +31,11 @@ const News = styled.div`
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;  
     overflow: hidden;
+
+    ${mediaQueries.tablet} {
+      font-size: 12px;
+      padding: 1px 10px 1px 10px;
+    }
 `;
 
 const Author = styled.div`
