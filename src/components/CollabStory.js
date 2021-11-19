@@ -5,6 +5,9 @@ import CollabHeader from "./CollabHeader";
 import { mediaQueries } from "../shared/config";
 
 function CollabStory(props) {
+  const Wrapper = styled.div`
+    margin-bottom: 30px;
+  `
   const ArticleCard = styled.div`
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
@@ -64,7 +67,7 @@ function CollabStory(props) {
   `;
 
   return (
-    <div>
+    <Wrapper>
         <CollabHeader data={props.data}/>
       
         {
@@ -78,7 +81,7 @@ function CollabStory(props) {
             </ArticleCard>
           )
         }
-    </div>
+    </Wrapper>
   );
 }
 

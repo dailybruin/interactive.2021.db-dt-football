@@ -17,13 +17,30 @@ const Background = styled.div`
     background-size: cover;
     background-position: top;
 
-    padding: 50px 100px 200px 100px;
+    padding: 50px 100px 200px 50px;
 
     ${mediaQueries.tablet} {
-      padding: 50px 20px 200px 20px;
+      padding: 50px 20px 40px 20px;
     }
 `
+const Footer = styled.div`
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins',sans-serif;
+    color: white;
+    text-align: center;
+    
+`
 
+const Text = styled.div`
+    margin: 100px 100px 30px 100px;
+    ${mediaQueries.tablet} {
+      margin: 10px 30px 10px 30px;
+    }
+`
 
 function App() {
   const [ data, setData ] = useState(null);
@@ -76,9 +93,18 @@ function App() {
         <a name='4'>
           <CollabPodcast data={data['collab_podcast']}/>
         </a>
+
+        <Footer>
+          <Text>
+          Built with Suzy’s ♥ in Kerckhoff 118 by Sunny Li, Aritra Mullick, Mark Benliyan, Janis Chen, Camille Chou, Selina Huynh, Maggie Li, Tracy Zhao, Angad. 
+          <br/>Also thanks to Shuning Zhang's help from Daily Trojan. <br/>Designed by Lauren Ho and Alyssa Shao.
+          </Text>
+        
+        </Footer>
         
       </Background>
       </div>
+
     </>
     )
   );

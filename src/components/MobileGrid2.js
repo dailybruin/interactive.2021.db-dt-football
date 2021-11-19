@@ -7,6 +7,10 @@ const Grid = styled.div`
 display: grid;
 grid-gap: 20px;
 margin-bottom: 100px;
+
+${mediaQueries.tablet} {
+      margin-bottom: 60px;
+    }
 `;
 
 const Title = styled.div`
@@ -16,6 +20,7 @@ const Title = styled.div`
     align-items: center;
     background-image: ${props => props.isDB ? "linear-gradient(to bottom, #ffffff00 50%, #0C6498 50%)" : "linear-gradient(to bottom, #ffffff00 50%, #C31F1F 50%)"}; 
     font-size: 18px;
+    margin-top: 50px;
     margin-bottom: 10px;
     text-shadow:
             1px 1px 0 #fff, -1px 1px 0 #fff, 1px -1px 0 #fff, -1px -1px 0 #fff,
