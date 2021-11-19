@@ -60,7 +60,8 @@ const SeeMore = styled.div`
 /* position: static; */
 /* right: 0; */
 /* margin-left: ; */
-background-color: #a5c5d9;
+/* background-color: #a5c5d9; */
+background-color: ${(props) => props.color};
 justify-content: center;
 justify-self: center; 
 /* line-height: 100%; */
@@ -119,7 +120,7 @@ export default function Grid1Mobile(props) {
                 {UCLAplayerPreviewText[UCLAimagePicked]}
             </Text>
 
-            <SeeMore direction="arrow" onClick={()=> {setDBText(true)}}>
+            <SeeMore color="#a5c5d9" direction="arrow" onClick={()=> {setDBText(true)}}>
                 <Arrow>
                     {"\u2192"}  
                 </Arrow>
@@ -150,9 +151,9 @@ export default function Grid1Mobile(props) {
 
                 })}
                 </Text>
-                <SeeMore direction="arrow" onClick={()=> {setDBText(false)}}>
+                <SeeMore color="#a5c5d9" direction="arrow" onClick={()=> {setDBText(false)}}>
                     <Arrow>
-                     {"\u2192"}  
+                     {"\u2190"}  
                     </Arrow>
                 </SeeMore>
             
@@ -181,7 +182,7 @@ export default function Grid1Mobile(props) {
             </Text>
 
             
-                <SeeMore direction="arrow" onClick={()=> {setDTText(true)}}>
+                <SeeMore color = "#e9abab" direction="arrow" onClick={()=> {setDTText(true)}}>
                     <Arrow>
                      {"\u2192"}  
                     </Arrow>
@@ -213,9 +214,9 @@ export default function Grid1Mobile(props) {
 
                 })}
                 </Text>
-                <SeeMore direction="arrow"onClick={()=> {setDTText(false)}}>
+                <SeeMore color="#e9abab" direction="arrow"onClick={()=> {setDTText(false)}}>
                     <Arrow>
-                     {"\u2192"}  
+                     {"\u2190"}  
                     </Arrow>
                 </SeeMore>
         </TextGrid>
