@@ -1,5 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
+import { mediaQueries } from "../shared/config";
 // import './Collab.css';
 
 function CollabHeader(props) {
@@ -10,9 +11,10 @@ function CollabHeader(props) {
     font-weight: normal;
     background-color: white;
     position: relative;
-    margin: 20px auto;
-    max-width: 1252px;
-    width: 90%;
+    /* margin: 20px auto; */
+    margin-bottom: 30px;
+    /* max-width: 1252px; */
+    /* width: 90%; */
     padding: ${props.data['intro_text'] ? '15px 2%' : '7px 2%'};
   `;
   const CollabTitle = styled.div`
@@ -33,12 +35,17 @@ function CollabHeader(props) {
             0px 2px 0 #fff, 0px -2px 0 #fff, -2px 0px 0 #fff, 2px 0px 0 #fff,
             1px 2px 0 #fff, -1px 2px 0 #fff, 1px -2px 0 #fff, -1px -2px 0 #fff,
             2px 1px 0 #fff, -2px 1px 0 #fff, 2px -1px 0 #fff, -2px -1px 0 #fff;
+
+    ${mediaQueries.tablet} {
+      font-size: 12px;
+    }
   `;
   const CollabIntro = styled.div`
-    font-family: 'Gotham Condensed';
-    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
     line-height: 130.8%;
   `;
+  console.log(props.data)
   return (
     <MainWrapper>
       <CollabTitle>{props.data['title']}</CollabTitle>

@@ -20,8 +20,8 @@ flex: 1 280px;
 `;
 
 const News = styled.div`
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
     padding: 5px 10px 5px 10px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -30,7 +30,8 @@ const News = styled.div`
 `;
 
 const Author = styled.div`
-font-family: 'Press Start 2P', cursive;
+font-family: 'Poppins', sans-serif;
+font-weight: 800;
 font-size: 10px;
 padding: 10px;
 `;
@@ -47,15 +48,30 @@ const Image = styled.div`
   border-left-color: ${(props) => props.color};
 `;
 
+const NewsAnchor = styled.a`
+    color: black;
+    text-decoration: none;
+`
+
 export default function ArticleBox(props) {
     let text = props.text;
     let author = props.author;
     let image = props.image;
     let color = props.color;
+
+    if (props.color == "ucla"){
+        color = "#0C6498";
+    }
+    else{
+        color = "#C31F1F";
+    }
+
     return (
             <Box> 
                 <Text>
+                    <NewsAnchor href={props.url}>
                     <News> {text} </News>
+                    </NewsAnchor>
                     <Author> {author} </Author>
                 </Text>
                 <Image color={color} image = {image} src="" alt=""/>
